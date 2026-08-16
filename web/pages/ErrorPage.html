@@ -1,0 +1,9 @@
+{{define "ErrorPage"}}
+{{template "base.top" .}}
+    <div>
+        <h2>Oops! It appears you ran into a problem!</h2>
+        <h3>Status: {{ .Content.Status }}</h3>
+        <p>{{ .Content.Error }}</p>
+    </div>
+{{template "base.bottom"}}
+{{end}}
