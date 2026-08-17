@@ -4,9 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/output.css" type="text/css">
     <title>{{ .Title }}</title>
 </head>
-<body>
+<body class="m-2 pl-80 bg-gray-700 font-sans text-white">
+    <!-- Menu -->
+    <div class="fixed top-0 bottom-0 left-0 w-80 flex flex-row border-r-2 border-solid items-center border-gray-950 bg-gray-800">
+        <!-- Servers -->
+        <div class="fixed top-0 bottom-0 left-0 w-20 flex flex-col border-r-2 border-solid items-center border-gray-950 bg-gray-900">
+            <!-- Logo -->
+            <div>
+
+            </div>
+        </div>
+        <!-- Direct Messages -->
+        <div class="fixed top-0 bottom-0 left-20 w-60 flex flex-col">
+            
+        </div>
+    </div>
 {{end}}
     
 {{define "base.bottom"}}
