@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS photo (
+    photo_id INTEGER PRIMARY KEY,
+    format TEXT NOT NULL,
+    data BLOB NOT NULL
+);

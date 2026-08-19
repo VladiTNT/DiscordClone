@@ -14,4 +14,10 @@ func (a *App) RegisterRoutes() {
 	// Pages
 	pageHandler := handlers.NewPageHandler(a.Templates, a.Logger)
 	a.Router.HandleFunc("GET /", pageHandler.HomePage)
+	a.Router.HandleFunc("GET /pages/signup", pageHandler.SignupPage)
+	a.Router.HandleFunc("GET /pages/login", pageHandler.LoginPage)
+
+	// Auth
+	// POST /api/auth/signup
+	// POST /api/auth/login
 }

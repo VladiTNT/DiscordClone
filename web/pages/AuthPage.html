@@ -1,0 +1,26 @@
+{{define "AuthPage"}}
+{{template "base.top" .Top}}
+    <div>
+        <h1>
+            {{if eq .Content.State "Signup"}}
+                Sign up
+            {{else}}
+                Login
+            {{end}}
+        </h1>
+        <form action="/api/auth/{{if eq .Content.State "Signup"}}signup{{else}}login{{end}}" method="post">
+            <input type="text" name="name" placeholder="Name">
+            {{if eq .Content.State "Signup"}}
+                <input type="email" name="email" placeholder="Email">
+            {{end}}
+            <input type="password" name="pass" placeholder="Password">
+            <button type="submit">Submit</button>
+        </form>
+        {{if eq .Content.State "Signup"}}
+            <a href="/pages/login">Login</a>
+        {{else}}
+            <a href="/pages/signup">Signup</a>
+        {{end}}
+    </div>
+{{template "base.bottom"}}
+{{end}}

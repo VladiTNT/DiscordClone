@@ -77,3 +77,31 @@ func (ph *PageHandler) HomePage(w http.ResponseWriter, r *http.Request) {
 		ph.pageErr(w, err, http.StatusInternalServerError)
 	}
 }
+
+func (ph *PageHandler) SignupPage(w http.ResponseWriter, r *http.Request) {
+	if err := ph.bufferHtml(w, "AuthPage", templates.Page{
+		Top: templates.PageTop{
+			Title: "Signup",
+		},
+		Content: map[string]any{
+			"State": "Signup",
+		},
+		Bottom: templates.PageBottom{},
+	}); err != nil {
+		ph.pageErr(w, err, http.StatusInternalServerError)
+	}
+}
+
+func (ph *PageHandler) LoginPage(w http.ResponseWriter, r *http.Request) {
+	if err := ph.bufferHtml(w, "AuthPage", templates.Page{
+		Top: templates.PageTop{
+			Title: "Login",
+		},
+		Content: map[string]any{
+			"State": "Login",
+		},
+		Bottom: templates.PageBottom{},
+	}); err != nil {
+		ph.pageErr(w, err, http.StatusInternalServerError)
+	}
+}
